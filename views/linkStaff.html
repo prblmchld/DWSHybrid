@@ -1,0 +1,46 @@
+<div data-role="view" data-title="Linkstaff" data-layout="main" data-model="APP.models.linkstaff">
+    <div>
+        <div data-bb-type="scroll-panel" data-bb-scroll-effect="on" style="margin:0px;padding:0px;">
+            <div data-bb-type="header" class="header">Choose PIN</div>
+
+            <div data-bb-type="round-panel">
+                <div data-bb-type="label" data-bb-style="stretch">Please supply your ID No: to UPDATE your PIN</div>
+
+                <div data-bb-type="label" data-bb-style="stretch">Your Identification No:</div>
+                <input id="txt_id_link" type="number" value="" />
+                <div data-bb-type="label" data-bb-style="stretch">New PIN:</div>
+                <input id="txt_PIN_link" type="number" value="" />
+                <div data-bb-type="label" data-bb-style="stretch">Confirm PIN:</div>
+                <input id="txt_PIN2_link" type="number" value="" />
+
+
+                <table style="width:100%">
+                    <tr>
+                        <td style="text-align:center; margin:0px auto;">
+                            <div data-bb-type="button" data-bb-style="stretch" style="width:50%;" onclick="link_me();" id="btn_register_link">SET PIN</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="actitvityIndicatorLINK" style="height:100px; display:none; width:200px;margin:0 30px;">
+
+
+
+                <div id="modal_messageLINK" class="message">updateing PIN...</div>
+            </div>
+
+            <div data-bb-type="menu">
+
+                <div data-bb-type="menu-item" onclick="userManual();">Help Document</div>
+                <div data-bb-type="menu-separator"></div>
+                <div data-bb-type="menu-item" onclick="showAbout();">About</div>
+                <div data-bb-type="menu-item" onclick="Options()">Settings</div>
+                <div data-bb-type="menu-separator"></div>
+                <div data-bb-type="menu-item" onclick="linkStaff_Sync()">SYNC Now</div>
+                <div data-bb-type="menu-item" onclick="masterReset()">Master Reset</div>
+                <div data-bb-type="menu-separator"></div>
+                <div data-bb-type="menu-item" onclick="mcloseApp()">Restart App</div>
+            </div>
+        </div>
+    </div>
+</div>

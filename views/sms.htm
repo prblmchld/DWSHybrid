@@ -1,0 +1,61 @@
+﻿<div data-bb-type="screen">
+    <div data-bb-type="scroll-panel" data-bb-scroll-effect="on" style="margin:0px;padding:0px;">
+        <div data-bb-type="header" class="header">DWS First Registration</div>
+
+        <div data-bb-type="round-panel">
+            <div data-bb-type="label" data-bb-style="stretch">Please supply all details for registration</div>
+            <table style="width:100%;">
+                <tr>
+                    <td style="width:100%;">
+                        <select x-blackberry-focusable="true" id="job_type_id" style="max-width:90%; margin:2px;">
+                            <option value="-1">Select your Job Description</option>
+                            <option value="5">Area Supervisor</option>
+                            <option value="2025">Area Manager</option>
+                            <option value="4032">Site Supervisor</option>
+                            <option value="2062">Site Manager</option>
+                            <option value="4029">Driver</option>
+                            <option value="4034">Driver - Reliever</option>
+                            <option value="4023">Sorter</option>
+                            <option value="4026">Sorter - Reliever</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div data-bb-type="label" data-bb-style="stretch">Your Identification No:</div>
+            <input id="txt_id" type="number" value="" />
+            <div data-bb-type="label" data-bb-style="stretch">What site do you work at:</div>
+            <input id="txt_site_name" type="text" value="" />
+            <div data-bb-type="label" data-bb-style="stretch">Current PIN (if known):</div>
+            <input id="txt_PIN" type="number" value="" />
+            <div data-bb-type="label" data-bb-style="stretch">Sites you are responsible for:</div>
+            <input id="txt_no_sites" type="number" value="1" />
+            <table style="width:100%">
+                <tr>
+                    <td style="text-align:center; margin:0px auto;">
+                        <div data-bb-type="button" data-bb-style="stretch" style="width:50%;" onclick="send_SMS();" id="btn_register">Register</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="actitvityIndicatorSMS" style="height:100px; display:none; width:200px;margin:0 30px;">
+           
+
+          
+            <div id="modal_messageSMS" class="message">Registering...</div>
+        </div>
+           
+            <div data-bb-type="menu">
+                
+                <div data-bb-type="menu-item" onclick="userManual();">Help Document</div>
+                <div data-bb-type="menu-separator"></div>
+                <div data-bb-type="menu-item" onclick="showAbout();">About</div>
+                <div data-bb-type="menu-item" onclick="Options()">Settings</div>
+                <div data-bb-type="menu-separator"></div>
+                <div data-bb-type="menu-item" onclick="do_pre_Auth()">Do pre Authorisation</div>
+               <div data-bb-type="menu-item" onclick="masterReset()">Master Reset</div>
+                <div data-bb-type="menu-separator"></div>
+                <div data-bb-type="menu-item" onclick="mcloseApp()">Restart App</div>
+            </div>
+        </div>
+    </div>
+  

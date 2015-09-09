@@ -1,0 +1,35 @@
+<div data-role="view" data-title="Linkstaff" data-layout="main" data-model="APP.models.linkstaff">
+    <div>
+        <table style="width:100%">
+            <tr><td style="text-align:center;" class="header"><div data-bb-type="header">Enter Your PIN:</div></td></tr>
+            <tr><td style="text-align:center;"><input id="txt_password" data-bb-justify="center" type="number" value="" style="width:50%; text-align:center;" autocomplete="off"></td></tr>
+            <tr><td style="text-align:center;"><div data-bb-style="stretch" data-role="button" style="margin:0px auto; width:50%; text-align:center;" id="but_login"><a href="#" data-role="button">Login</a> </div></td></tr>
+        </table>
+        <div id="rslt_div" data-bb-type="label"></div>
+        <div data-bb-type="menu" id="side-menu">
+            <div data-bb-type="menu-item" onclick="userManual();">Help Document</div>
+            <div data-bb-type="menu-separator"></div>
+            <div data-bb-type="menu-item" onclick="showAbout();">About</div>
+            <div data-bb-type="menu-item" onclick="Options()">Settings</div>
+            <div data-bb-type="menu-separator"></div>
+
+            <div data-bb-type="menu-item" onclick="set_newUser()">Reset User & PIN</div>
+            <div data-bb-type="menu-item" onclick="masterReset()">Master Reset</div>
+            <div data-bb-type="menu-item" onclick="sync_all()">Synchronise</div>
+
+            <div data-bb-type="menu-separator"></div>
+            <div data-bb-type="menu-item" onclick="mcloseApp()">Restart App</div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+

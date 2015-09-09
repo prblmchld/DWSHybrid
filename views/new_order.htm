@@ -1,0 +1,98 @@
+
+
+    <div data-type="screen" data-effect="fade">
+       <div data-bb-type="header" data-style="stretch" x-blackberry-focusable='true' class="header" onclick="goHome()" style="margin-top:5px;" title="click for HOME"><span class="butt icon-home"></span>..back</div>
+        <table style="width:100%;">
+            <tr>
+                <td style="width:50%; padding:0px 5px;">
+                    <div data-type="button" data-bb-style="stretch" id="waste_but_new" onclick="set_div('div_waste', this);">Waste</div>
+                </td>
+                <td style="width:50%; padding:0px 5px;">   <div data-bb-type="button" data-bb-style="stretch" onclick="set_div('div_recl', this);">Recyclables</div></td>
+            </tr>
+        </table>
+
+        <div data-bb-type="round-panel" id="div_NO_new" style="display:none;">
+
+
+
+           
+                <table style="width: 100%; margin: 0px 6px;">
+                    <tr>
+                        <td style=""><div data-bb-type="label">WS No: </div></td>
+                        <td>
+                            <input id="txt_no_wsno" type="number" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div data-type="label" data-bb-style="stretch">Load: </div></td>
+                        <td>
+                            <select id="no_load_type" style="max-width:80%; margin:2px;">
+                                <option value="1">Initial Delivery</option>
+                                <option value="2">Lift and Empty</option>
+                                <option value="3" selected="true">Lift and Remove (Full)</option>
+                                <option value="4">Lift and Remove (Empty)</option>
+
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="display:none;">
+                        <td><div data-type="label" data-bb-style="stretch">Date: </div></td>
+                        <td>
+                            <input id="txt_col_date" type="date"  onchange="check_date()" />
+                        </td>
+                    </tr>
+                    </table>
+            <div data-bb-type="label" data-style="stretch" style="width:100%; border-bottom:1px solid #666; " id="div_sp_name">Add waste to Order </div>
+
+            <div id="waste_items">
+                
+            </div>
+                  
+            <table style="width:100%;  margin:1px;" id="add_waste_control">
+                <tr><td colspan="2"><div data-type="button"  data-style="stretch" id="but_choose_waste" onclick="show_waste_types()"><span class="butt icon-trash"></span>Choose Waste to add</div>
+                    </td></tr>
+                </table>
+            <table style="width: 100%; margin: 1px; display: none; border: 1px solid #6393c1; border-radius: 5px; background-color: #cfe7fa; " id="add_now_waste_command">
+                <tr>
+                    <td colspan="2" id="add_waste_desc"></td>
+                </tr>
+                <tr>
+
+                    <td style="width:100px; vertical-align:central; white-space:nowrap;">Quantity <input id="txt_col_item_Qty" type="number" style="width:40px; text-align:center;" value="1" /></td>
+                    <td align="left" style=" width:100%; white-space:nowrap;">
+                        <div data-bb-type="button" style="width:60px;" id="but_add_waste" onclick="add_waste_order()"><span class="butt icon-add"></span>Add</div>
+                        <div data-bb-type="button" style="width:25px;" onclick="cancel_waste_add()"><span class="butt icon-cancel"></span></div>
+                    </td>
+                </tr>
+
+            </table>
+
+
+            </div>
+        <div class="btm_buttons" id="order_buttons" style="display:none;">
+            <div data-bb-type="button" style="width:50%;" onclick="waste_place_order()" id="no_place"><span class="butt icon-check"></span>Place Order</div>
+            <div data-bb-type="button" style="width:50%;" onclick="do_menu_nav('sites.htm', 'new_order')" id="btn_save_options"><span class="butt icon-cancel"></span>Cancel</div>
+        </div>
+        <div id="div_ws"></div>
+
+        <div data-bb-type="menu">
+          
+            <div data-bb-type="menu-item" data-bb-selected="true" onclick="goHome();">Menu</div>
+
+            <div data-bb-type="menu-separator"></div>
+            <div data-bb-type="menu-item" onclick="sync_all()">Synchronise</div>
+
+            <div data-bb-type="menu-separator"></div>
+            <div data-bb-type="menu-item" onclick="showAbout();">About</div>
+            <div data-bb-type="menu-item" onclick="Options()">Settings</div>
+            <div data-bb-type="menu-item" onclick="mcloseApp()">Close</div>
+        </div>
+        </div>
+
+
+      
+          
+
+           
+
+

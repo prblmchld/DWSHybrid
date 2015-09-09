@@ -1,0 +1,264 @@
+        <div data-type="screen">
+    <div data-type="scroll-panel" data-scroll-effect="on" style="margin:0px;padding:0px;">
+        <!--<table style="width:100%;">
+
+            <tr>
+                <td style="width:50%; text-align:center;">
+
+                        <div x-focusable='true' name="menu" class="menu" onclick="do_menu_nav('sites.htm', 'TakePhoto')"><span class="icon icon-photos"></span>Photo's</div>
+
+                </td>
+                <td style="width:50%; text-align:center;">
+                    <div x-blackberry-focusable='true' name="menu" class="menu" onclick="do_menu_nav('messaging.htm', 'Messaging')"><span class="icon icon-mail"></span>Messages</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%; text-align:center;">
+                    <div x-blackberry-focusable='true' name="menu" class="menu" onclick="do_menu_nav('sites.htm', 'new_order')"><span class="icon icon-order_new"></span>New Order</div>
+                </td>
+                <td style="width:50%; text-align:center;">
+                    <div x-blackberry-focusable='true' name="menu" class="menu" onclick="showVideos()"><span class="icon icon-video"></span>Videos</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%; text-align:center;">
+                    <div x-blackberry-focusable='true' name="menu" class="menu" onclick="do_menu_nav('sites.htm', 'ws_out')"><span class="icon icon-order_confirm"></span>Collect Order</div>
+
+                </td>
+                <td style="width:50%; text-align:center;">
+                    <table style="width:100%;">
+                        <tr>
+                            <td style="width:50%; text-align:center;">
+                                <div x-blackberry-focusable='true' name="menu" class="menu" style="text-align:center; margin:1px; border-radius:5px; height:29px;" onclick="check_in()">Start</div>
+                            </td>
+                            <td style="width:50%; text-align:center;">
+                                <div x-blackberry-focusable='true' name="menu" class="menu" style="text-align:center;margin:1px; border-radius:5px; height:29px;" onclick="check_out()">End</div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+          <tr>
+              <td style="height:29px;">&nbsp;</td>
+              <td></td>
+          </tr>
+            <tr>
+                <td style="width:50%; text-align:center;">
+                    <div x-blackberry-focusable='true' name="menu" class="menu" onclick="moreInfo()"><span class="icon icon-order_info"></span>More Info</div>
+
+                    <div x-blackberry-focusable='true' name="menu" class="menu" onclick="milkruns()" style="display:none;"><span class="icon icon-repeat"></span>Milkruns</div>
+
+                </td>
+                <td style="width:50%; text-align:center;">
+                    <div x-blackberry-focusable='true' name="menu" class="menu" onclick="mcloseApp()"><span class="icon icon-logout"></span>Log Out</div>
+                </td>
+            </tr>
+
+        </table>-->
+
+
+        <style>
+            /* First row */
+            .b1, .b2 {
+                width: 50%;
+            }
+
+            /* Second row */
+            .b3, .b4 {
+                width: 50%;
+            }
+
+            /* Third row */
+            .b5, .b6 {
+                width: 50%;
+            }
+
+            /* Fourth row */
+            .b7, .b8 {
+                width: 50%;
+            }
+
+            /* Fith row */
+            .b9, .b10 {
+                width: 50%;
+            }
+        </style>
+        <div class="block-group">
+            <!-- First row -->
+            <div class="b1 block">
+                <div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+                    <div class="flipper">
+                        <div class="front">
+                            <div id="menu_photos" class="menu" style="background: url('images/icons/cam.png') no-repeat;  height:100px; width:70px;" onclick="do_menu_nav('#photolist', 'TakePhoto')"></div>
+                        </div>
+                        <div class="back">
+                            
+                           
+
+    <div data-type="screen"  >
+     
+        <div onclick="goHome()" class="header" title="click for HOME"><span class="butt icon-home"></span>..back</div>
+           
+        <div data-type="scroll-panel" data-scroll-effect="on" style="margin:0px;padding:0px;">
+
+
+            <div class="divsites" id="div_sites"></div>
+        </div>
+        <!--<div data-type="menu">
+            <div data-type="menu-item" data-selected="true" onclick="goHome();">Menu</div>
+          
+            <div data-type="menu-separator"></div>
+            <div data-type="menu-item" onclick="sync_all()">Synchronise</div>
+           
+            <div data-type="menu-separator"></div>
+            <div data-type="menu-item" onclick="showAbout();">About</div>
+            <div data-type="menu-item" onclick="Options()">Settings</div>
+            <div data-type="menu-item" onclick="mcloseApp()">EXIT</div>
+        </div>-->
+        </div>
+          
+<script type="text/javascript">
+
+    site_list(1)
+
+
+</script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="b2 block">
+                <div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+                    <div class="flipper">
+                        <div class="front">
+
+                            <div id="menu_msg" class="menu" style="background: url('images/icons/msg.png')no-repeat; height:100px; width:70px;" onclick="do_menu_nav('views/messaging.htm', 'Messaging')"></div>
+                        </div>
+                        <div class="back">
+                            <div class="back-logo"></div>
+                            <div class="back-title">MyMsg's</div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block-group">
+            <!-- Second row -->
+            <div class="b3 block">
+                <div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+                    <div class="flipper">
+                        <div class="front">
+                            <div name="menu_no" class="menu" style="background: url('images/icons/neworder.png') no-repeat;  height:100px; width:70px;" onclick="do_menu_nav('views/sites.htm', 'new_order')"></div>
+                        </div>
+                        <div class="back">
+                            <div class="back-logo"></div>
+                            <div class="back-title">MySites</div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="b4 block">
+                <div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+                    <div class="flipper">
+                        <div class="front">
+
+                            <div name="menu_collP" class="menu" style="background: url('images/icons/coll1.png')no-repeat; height:100px; width:90px; " onclick="do_menu_nav('sites.htm', 'ws_out')"></div>
+                        </div>
+                        <div class="back">
+                            <div class="back-logo"></div>
+                            <div class="back-title">MySites</div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="block-group">
+            <!-- Third row -->
+            <div class="b5 block">
+                <div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+                    <div class="flipper">
+                        <div class="front">
+                            <div name="menu_milk_runs" class="menu" style="background: url('images/icons/milkruns.png') no-repeat;  height:100px; width:70px;"></div>
+                        </div>
+                        <div class="back">
+                            <div class="back-logo"></div>
+                            <div class="back-title">MySites</div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="b6 block">
+                <div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+                    <div class="flipper">
+                        <div class="front">
+                            <div name="menu_videos" class="menu" style="background: url('images/icons/vids.png') no-repeat;  height:100px; width:70px;" onclick="showVideos()"></div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="back-logo"></div>
+                        <div class="back-title">MyVids</div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="block-group">
+            <!-- Fourth row -->
+            <div class="b7 block">
+
+                <div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+                    <div class="flipper">
+                        <div class="front">
+                            <div id="menu_more_info" class="menu" style="background: url('images/icons/moreinfo.png')no-repeat; height:100px; width:70px;"
+                                 onclick='openURLInApp("http://mbus.dontwaste.co.za/moreInfo.aspx?ID_JOB=46121");'></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">Menu</div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="b8 block">
+
+            <div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+                <div class="flipper">
+                    <div class="front">
+                        <div name="menu_log_out" class="menu" style="background: url('images/icons/logout.png') no-repeat;  height:100px; width:70px;" onclick="mcloseApp()"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="back-logo"></div>
+                <div class="back-title">GoodBEY! :(</div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+
+
+                <div>
+            
+              
+                <div x-blackberry-focusable='true' name="menu" class="menu" onclick="ScanNow()" style="display:none;"><span class="icon icon-photos"></span>Scan</div>
+               
+            </div>
+         
+      
+           
+       
+  

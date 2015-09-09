@@ -1,0 +1,72 @@
+<div data-type="view" >
+    <div data-bb-type="header" class="header" onclick="goHome()" title="click for HOME"><span class="ui-btn1 ui-btn-icon-left ui-icon-arrow-l"></span></div>
+    <div id="bot_butt_mm" class="btn_top">
+        <div data-bb-type="button" style="width:160px;" onclick="newMessage()" id="btn_new_photo"><span class="butt icon-add"></span></div>
+
+        <div data-bb-type="button" style="width:160px;" onclick="goHome()" id="btn_upload"><span class="butt icon-cancel"></span></div>
+
+    </div>
+  
+   
+   
+        <div id="messageNEW" data-theme="a" >
+            <div data-bb-type="round-panel" >
+                <table style="width:100%; border-collapse:collapse; border-spacing:0px; height:100%;">
+                    <tr>
+                        <td>To:</td>
+                        <td>
+                            <select  id="msg_to" style="">
+                                <option value="-1" selected="true">New message to:</option>
+                                <option value="1">Area Supervisor</option>
+                              
+                                <option value="3">Genral Manager</option>
+                                <option value="4">Call Center</option>
+                                <option value="5">Payroll Dept</option>
+
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="vertical-align:top;">Message:</td>
+                        <td style="vertical-align:top;">
+                            <textarea id="mssg_txt" rows="6" data-bb-clear="none" style=" width:100%; height:100px; text-align:left; vertical-align:top;"></textarea>
+                        </td>
+                    </tr>
+                  
+
+                </table>
+              <div  id="bot_butt_m">
+                    <div data-role="button"   onclick="mssgSend()" id="msg_send" ><span class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-check ui-btn-inline" ></span>Send</div>
+                    <div data-type="button" onclick="msgCancel()" id="msg_send_cancel"><span class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-delete ui-btn-inline" ></span>Cancel</div>
+                </div>
+            </div>
+       
+    </div>
+    
+    <br>
+    <br>
+
+   
+   
+        <div data-bb-type="menu-item" onclick="newMessage();">New Message</div>
+       
+       
+        <div data-role="navbar">
+        
+            
+            <div data-type="menu-separator"></div>
+      
+        <div data-icon="globe" onclick="resetMessages();">Reset Messages</div>
+      
+        
+     
+        <div data-bb-type="menu-item" onclick="goHome();">Home</div>
+
+        <div data-bb-type="menu-separator"></div>
+        <div data-bb-type="menu-item" onclick="sync_all()">Synchronise</div>
+        </div>
+
+    </div>
+
+

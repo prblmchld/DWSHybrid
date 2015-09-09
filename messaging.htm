@@ -1,0 +1,64 @@
+<div data-bb-type="screen" >
+    <div data-bb-type="header" class="header" onclick="goHome()" title="click for HOME"><span class="ui-btn1 ui-btn-icon-left ui-icon-arrow-l"></span></div>
+    <div id="bot_butt_mm" class="btn_top">
+        <div data-bb-type="button" style="width:160px;" onclick="newMessage()" id="btn_new_photo"><span class="butt icon-add"></span>New</div>
+
+        <div data-bb-type="button" style="width:160px;" onclick="goHome()" id="btn_upload"><span class="butt icon-cancel"></span>Cancel</div>
+
+    </div>
+    <div id="bubbleContainer" style="background-color: #EEE; padding-bottom:55px; margin-top:0px; padding-top:5px;"></div>
+   
+   
+        <div id="messageNEW" style="display: none; background-color: white; width: 100%; height: 100%; margin: 0; padding: 0; ">
+            <div data-bb-type="round-panel" style="width: 100%; height: 240px; margin: 0; padding: 0;">
+                <table style="width:100%; border-collapse:collapse; border-spacing:0px; height:100%;">
+                    <tr>
+                        <td>To:</td>
+                        <td>
+                            <select  id="msg_to" style="">
+                                <option value="-1" selected="true">New message to:</option>
+                                <option value="1">Area Supervisor</option>
+                              
+                                <option value="3">Genral Manager</option>
+                                <option value="4">Call Center</option>
+                                <option value="5">Payroll Dept</option>
+
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="vertical-align:top;">Message:</td>
+                        <td style="vertical-align:top;">
+                            <textarea id="mssg_txt" rows="6" data-bb-clear="none" style=" width:100%; height:100px; text-align:left; vertical-align:top;"></textarea>
+                        </td>
+                    </tr>
+                
+
+                </table>
+                <div class="btm_buttons" id="bot_butt_m">
+                    <div data-bb-type="button" style="width:50%; " onclick="mssgSend()" id="msg_send"><span class="butt icon-check"></span>Send</div>
+                    <div data-bb-type="button" style="width:50%;" onclick="msgCancel()" id="msg_send_cancel"><span class="butt icon-cancel"></span>Cancel</div>
+                </div>
+            </div>
+       
+    </div>
+
+    <div data-bb-type="menu">
+      
+        <div data-bb-type="menu-separator"></div>
+      
+        <div data-bb-type="menu-item" onclick="resetMessages();">Reset Messages</div>
+      
+        
+     
+        <div data-bb-type="menu-item" onclick="goHome();">Home</div>
+
+        <div data-bb-type="menu-separator"></div>
+        <div data-bb-type="menu-item" onclick="sync_all()">Synchronise</div>
+        <div data-bb-type="menu-separator"></div>
+        <div data-bb-type="menu-item" onclick="newMessage();">New Message</div>
+        <div data-bb-type="menu-item" onclick="mssgSend();">Send</div>
+    </div>
+    </div>
+

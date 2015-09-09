@@ -1,0 +1,300 @@
+<div data-role="view" data-title="Home" data-layout="main" data-model="APP.models.home">
+ 
+
+    <style>
+
+     /* First row */
+    .b1, .b2 { width: 50%; }
+
+    /* Second row */
+    .b3, .b4 { width: 50%; }
+
+    /* Third row */
+    .b5, .b6 { width: 50%; }
+
+    /* Fourth row */
+    .b7, .b8 { width: 50%; }
+
+    /* Fith row */
+    .b9, .b10 { width: 50%; }
+
+ .block-group { margin: -2px -6px; }
+.block { padding: 2px 2px 2px 2px; }
+    </style>
+    <div class="block-group">
+        <!-- First row -->
+        <div class="b1 block"><div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+    <div class="flipper">
+        <div class="front">
+            <div id="menu_photos" class="menu" style="background: url('images/icons/photo1.png') no-repeat; position:absolute; height:133px; width:81%;  display: block;
+             margin-left: 30px; margin-right: auto; margin-top: 39px; "; onclick="do_menu_nav('#photo_sites', 'TakePhoto')"></div>
+        </div>
+        <div class="back" id="photo_sites" >
+            <div class="back-logo"></div>
+            <div  class="back-title">MySites</div>
+
+
+            <div data-type="screen">
+
+                <div onclick="goHome()" class="header" title="click for HOME"><span class="back"></span>..back</div>
+
+                <div data-type="scroll-panel" data-scroll-effect="on" >
+                    <p>
+
+                        <div id="div_sites"></div>
+
+                    </p>
+                </div>
+        
+            </div>
+
+            <script type="text/javascript">
+
+             site_list(1)
+
+            </script>
+
+        </div>
+    </div>
+</div></div>
+        <div class="b2 block"><div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+    <div class="flipper">
+        <div class="front">
+           
+            <div id="menu_msg" class="menu" style="background: url('images/icons/msg1.png')no-repeat; position:absolute; height:100px; width:70px; height:180px; width:100%;  display: block;
+             margin-left: 35px; margin-right: auto; margin-top: 38px;" onclick="do_menu_nav('views/messaging.htm', 'Messaging')"></div>
+        </div>
+        <div class="back">
+            
+            <div class="back-title">MyMsg's</div>
+            <p>  </p>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+    <div class="block-group">
+        <!-- Second row -->
+        <div class="b3 block"><div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+    <div class="flipper">
+        <div class="front">
+            <div name="menu_no" class="menu" style="background: url('images/icons/neworder1.png') no-repeat; position:absolute; height:133px; width:81%;  display: block;
+             margin-left: 30px; margin-right: auto; margin-top: 39px;" onclick="do_menu_nav('views/sites2.htm', 'new_order')"></div>
+        </div>
+        <div class="back">
+            
+            <div class="back-title">My Msg</div>
+            <div data-type="screen">
+
+                <div onclick="goHome()" class="header" title="click for HOME"><span class="butt icon-home"></span></div>
+
+                <div data-type="scroll-panel" data-scroll-effect="on" style="margin:0px; padding:0px;">
+
+
+                    <div id="div_sites"></div>
+                </div>
+                <div data-type="menu">
+                    <div data-type="menu-item" data-selected="true" onclick="goHome();">Menu</div>
+
+                    <div data-type="menu-separator"></div>
+                    <div data-type="menu-item" onclick="sync_all()">Synchronise</div>
+
+                    <div data-type="menu-separator"></div>
+                    <div data-type="menu-item" onclick="showAbout();">About</div>
+                    <div data-type="menu-item" onclick="Options()">Settings</div>
+                    <div data-type="menu-item" onclick="mcloseApp()">EXIT</div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+
+    site_list(2)
+
+
+            </script>
+
+        </div>
+    </div>
+</div></div>
+        <div class="b4 block"><div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+            <div class="flipper">
+                <div class="front">
+                   
+                    <div name="menu_collP" class="menu" style="background: url('images/icons/coll1.png')no-repeat; height:100px; width:90px; height:180px; width:100%;  display: block;
+              margin-left: 35px; margin-right: auto; margin-top: 38px; " onclick="do_menu_nav('sites.htm', 'ws_out')"></div>
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">MyVids</div>
+                    <p></p>
+                </div>
+            </div>
+        </div></div>
+       
+    </div>
+    <div class="block-group">
+        <!-- Third row -->
+        <div class="b5 block"><div class="flip-container" ontouchstart="this.classList.toggle('focus');">
+    <div class="flipper">
+        <div class="front">
+            <div name="menu_milk_runs" class="menu" style="background: url('images/icons/milkruns.png') no-repeat;  height:100px; width:70px; height:180px; width:100%;  display: block;
+             margin-left: 35px; margin-right: auto; margin-top: 38px;"></div>
+        </div>
+        <div class="back">
+            <div class="back-logo"></div>
+            <div class="back-title">Milkruns</div>
+            <p></p>
+        </div>
+    </div>
+</div>
+</div>
+        <div class="b6 block">
+            <div class="flipper">
+                <div class="front">
+                    <div name="menu_videos" class="menu" style="background: url('images/icons/vids.png') no-repeat;  height:100px; width:70px; height:180px; width:100%;  display: block; margin-left: 35px; margin-right: auto; margin-top: 38px;" onclick="showVideos()"></div>
+                </div>
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">MyVids</div>
+                    <p></p>
+                </div>
+            </div>
+        
+      
+    </div>
+    <div class="block-group">
+        <!-- Fourth row -->
+        <div class="b7 block">
+            <div class="flipper">
+                <div class="front">
+                    <div id="menu_more_info" class="menu" style="background: url('images/icons/moreinfo.png')no-repeat; height:100px; width:70px; height:180px; width:100%;  display: block;
+             margin-left: 27px; margin-right: auto; margin-top: 31px;"
+                         onclick='openURLInApp("http://mbus.dontwaste.co.za/moreInfo.aspx?ID_JOB=46121");'></div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="back-logo"></div>
+                <div class="back-title"></div>
+                <p></p>
+            </div>
+        </div>
+        
+        </div>
+        <div class="b8 block">  <div name="menu_log_out" class="menu" style="background: url('images/icons/logout.png') no-repeat;  height:100px; width:70px; height:180px; width:100%;  display: block;
+             margin-left: 35px; margin-right: auto; margin-top: 38px;" onclick="mcloseApp()"></div></div>
+     
+    </div>
+
+
+
+
+<!--<div id="leftcol" style="float: left; width:50%; position: absolute;
+top:90px; left:15px;">
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                  <div id="menu_photos" class="menu" style="background: url('images/icons/cam.png') no-repeat;  height:100px; width:70px;" onclick="do_menu_nav('views/sites.htm', 'TakePhoto')"></div>
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">MySites</div>
+                    <p>Sites</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <div id="menu_msg" class="menu" style="background: url('images/icons/msg.png')no-repeat; height:100px; width:70px;" onclick="do_menu_nav('views/messaging.htm', 'Messaging')"></div>
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">My Msg</div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <div name="menu_milk_runs" class="menu" style="background: url('images/icons/milkruns.png') no-repeat;  height:100px; width:70px;"></div>
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">My Msg</div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div id="centrecol" style="float: right; width:50%; position: absolute;
+top: 90px; left:267px;">
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <div name="menu_no" class="menu" style="background: url('images/icons/neworder.png') no-repeat;  height:100px; width:70px;" onclick="do_menu_nav('views/sites.htm', 'new_order')"></div>
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">MySites</div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <div name="menu_videos" class="menu" style="background: url('images/icons/vids.png') no-repeat;  height:100px; width:70px;" onclick="showVideos()"></div>
+
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">MyVids</div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <div name="menu_milk_runs" class="menu" style="background: url('images/icons/clockin.png') no-repeat;  height:100px; width:70px;" onclick="milkruns()"></div>
+                </div>
+                <div class="back">
+                    <div class="back-logo"></div>
+                    <div class="back-title">My Msg</div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>-->
+<!--<div id="rightcol" style="float: right; width:33%; position: absolute;
+top: 90px; left:251px;">
+
+        <div name="menu_collP" class="menu" style="background: url('images/icons/colorder.png')no-repeat; height:100px; width:90px; " onclick="do_menu_nav('sites.htm', 'ws_out')"></div>
+
+
+        <div id="menu_more_info" class="menu" style="background: url('images/icons/moreinfo.png')no-repeat; height:100px; width:70px;"
+             onclick='openURLInApp("http://mbus.dontwaste.co.za/moreInfo.aspx?ID_JOB=46121");'></div>
+
+
+
+
+        <div name="menu_log_out" class="menu" style="background: url('images/icons/logout.png') no-repeat;  height:100px; width:70px;" onclick="mcloseApp()"></div>
+    </div>-->

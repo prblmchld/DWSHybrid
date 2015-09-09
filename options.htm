@@ -1,0 +1,23 @@
+﻿  
+
+ <div data-bb-type="screen" >
+     <div class="header" onclick="goHome()"  title="click for HOME"><span class="butt icon-home"></span>..back</div>
+
+        <div data-bb-type="round-panel">
+            <div data-bb-type="label">SMS Server</div>
+            <input id="txt_SMS_Server" type="text" value="" data-bb-style="stretch" />
+              <div data-bb-type="label" >Primary Server</div>
+            <textarea id="txt_P_Server" style="width:100%"  data-bb-style="stretch" ></textarea>
+             <div data-bb-type="label" >Secondary Server</div>
+            <textarea id="txt_S_Server" style="width:100%" data-bb-style="stretch"></textarea>
+            <div data-bb-type="label" id="txt_MyPin">Pin No:</div>
+            <div data-bb-type="label" id="txt_lastLogin">Last Login:</div>
+      
+
+
+         
+            </div>
+       <div data-bb-type="button"  onclick="settings_save()" id="btn_save_options"><span class="butt icon-check"></span>Save</div>
+     <div data-bb-type="button" onclick="goHome()" id="btn_save_options"><span class="butt icon-cancel"></span>Cancel</div>
+     <div data-bb-type="button"  onclick="settings_default()" id="btn_set_def"><span class="butt icon-home"></span>Defaults</div>
+        </div>

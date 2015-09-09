@@ -1,0 +1,39 @@
+﻿<div data-bb-type="screen">
+    <div data-bb-type="scroll-panel" data-bb-scroll-effect="on" style="margin:0px;padding:0px;">
+        <div data-bb-type="header" class="header">DWS Handset pre-Auth</div>
+
+        <div data-bb-type="round-panel">
+            <div data-bb-type="label" data-bb-style="stretch">This will link IMEI to Cell No:</div>
+          
+            <hr />
+            <div data-bb-type="label" data-bb-style="stretch">Device IMEI:</div>
+            <div data-bb-type="label" data-bb-style="stretch" id="txt_IMEI_pre"></div>
+                    <br />
+            <table style="width:100%">
+                <tr>
+                    <td style="text-align:center; margin:0px auto;">
+                        <div data-bb-type="button" data-bb-style="stretch" style="" onclick="pre_auth();" id="btn_preauth">pre Authorisation</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="actitvityIndicatorPRE" style="height:100px; display:none; width:200px;margin:0 10px;">
+           
+
+          
+            <div id="modal_messagePRE" class="message">pre Auth in Progress...</div>
+        </div>
+           
+            <div data-bb-type="menu">
+                <div data-bb-type="menu-item" onclick="goSMS();">Normal Registration</div>
+                <div data-bb-type="menu-separator"></div>
+                <div data-bb-type="menu-item" onclick="showAbout();">About</div>
+                <div data-bb-type="menu-item" onclick="Options()">Settings</div>
+                <div data-bb-type="menu-separator"></div>
+                <div data-bb-type="menu-item" onclick="masterReset()">Master Reset</div>
+                <div data-bb-type="menu-separator"></div>
+                <div data-bb-type="menu-item" onclick="mcloseApp()">Restart APP</div>
+            </div>
+        </div>
+    </div>
+  

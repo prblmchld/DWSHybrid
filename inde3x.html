@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DWS Site App</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no, maximum-scale=1.0">
+    <meta name="cursor-event-mode " content="processed" />
+
+
+   
+    <!-- DWSAPP references -->
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.js"></script>
+
+
+
+    <script type="text/javascript" src="scripts/json2.js"></script>
+
+    <script type="text/javascript" src="scripts/DWS_Menus.js"></script>
+    <script type="text/javascript" src="scripts/DWS_Pfoto_App.js"></script>
+
+
+    <link href="css/styles.css" rel="stylesheet" />
+    
+
+</head>
+<body >
+    <div data-role="page" class=" jqm-fullwidth" id="mainPage">
+      
+            <img src='images/logo_white.png' alt='Dont Waste Services' style="width:100%;" />
+        <div data-role="header" id="aHeader" class="">
+            <table style="width:auto; margin-left:0px; margin-right:0px;">
+                <tr>
+                    <td style="text-align:left;">
+                        <a href="#" id='hamburger' class="" data-role="button" data-icon="grid" style="float:left; height:30px; width:25px; margin:-2px; padding:8px 2px 8px 2px; " onclick="doMenu();">&nbsp;</a>
+                    </td>
+                    <td style="text-align: right;">
+                        <a href="#" id='settingsButton' class="" data-role="button" data-icon="gear" style="float:right;  height:20px; margin:0px; padding:8px 2px 8px 2px;" onclick="resetApp()">DEV</a>
+                    </td>
+                </tr></table>
+</div>
+     
+        <div data-role="content" id="div_content" class="ui-content jqm-content jqm-fullwidth" style="margin:0px 0px; padding:0px; height:100%;" >
+
+        
+        </div>
+
+    <div id="menu_div" class="optMenu"></div>
+
+    </div>
+
+    <script type="text/javascript">
+        var menuOpen = false;
+        var menuDiv;
+   var   appStarted = false;
+   function global_vars() {
+
+       if (appStarted) {
+      
+           var canpres = localStorage.getItem('PIN');
+           if (canpres) {
+               if (appStarted) {
+                 //  $('#hamburger').css('display', 'block');
+               }
+               else {
+               //    $('#hamburger').css('display', 'none');
+               }
+           }
+           else {
+            //   $('#hamburger').css('display', 'none');
+           }
+       }
+       appStarted = true;
+   }
+            //   wsMenu = document.querySelector('[data-bb-type=menu]');
+
+       
+        
+
+
+        function resetApp() {
+            sync_all();
+            mcloseApp()
+        }
+
+        function selectMenu() {
+            doMenu();
+
+        //    menuDiv = document.querySelector('[data-bb-type=menu]');
+        //    $('#optMenu').toggle();
+
+        }
+
+
+        $(document).on("ready", function () {
+            document.addEventListener("menubutton", doMenu, false);
+            hide_menu();
+            $('#hamburger').css('display', 'none');
+         //   $('#optMenu').css('display', 'none');
+
+
+
+
+            //   menuOpen = false;
+            start_android();
+
+            try{
+                //   $('#optMenu')
+            }
+            catch(e){}
+
+        });
+
+        function hide_menu() {
+    //   var     menuDivV = $('#optMenu').html();
+            //document.querySelector("menu");
+           // $.get(menuDiv).success(function (html) {
+            //   $('#optionMenu').html(menuDivV);
+        //    $('#optMenu').css('display', 'none');
+            menuOpen = true;
+            doMenu();
+            //    $('#optMenu').css('display', 'none');
+
+          //  });
+        };
+
+      
+
+
+   
+
+        
+        
+  
+        function doMenu() {
+          //  $(obj).toggle();
+      
+            var mnu = $("<div/>", {
+                "id": "popMenu",
+                "data-role": "popup",
+                "class": "optMenu",
+               
+                "position": "static;"
+
+
+
+            });
+           
+            
+       if (menuOpen != false) {
+         //  alert('menu ' + menuOpen);
+                $('#hamburger').css('display', '');
+           
+          
+                var pH = $('body').innerHeight();
+                $(mnu).html($('#optMenu').html());
+                $('#menu_div').html($(mnu).html());
+                $('#menu_div').animate({ scrollBottom: 0 }, '5000', 'swing');
+                $('#menu_div').height = '0px';
+                $('#menu_div').css('height', '0px');
+                $('#menu_div').css('display', 'none');
+             //   $(mnu).attr('style', 'display: none;');
+              //  $(mnu).toggle();
+                //   $('[data-bb-type=menu]').css('display', "block");
+                menuOpen = false;
+           //  return false;
+               
+       } else {
+          
+           $('#hamburger').css('display', 'none');
+        
+           $(mnu).html($('#optMenu').html());
+           $('#menu_div').html($(mnu).html());
+           $('#menu_div').css('height', '100%');
+           $('#menu_div').css('display', '');
+     
+           var pH = $('body').innerHeight();
+           $(mnu).css('height', pH - 80);
+           $(mnu).css('top', '80px');
+        //   $(mnu).css('display', 'inline-block');
+
+           
+           $('#menu_div').animate({ scrollTop: 0 }, '5000', 'swing');
+       //    alert($(mnu).appendTo($.mobile.activePage));
+         //  $(mnu).();
+
+         //       $('#hamburger').show('slide');
+          //    $(menuDiv).hide('slide');
+
+      //   $('#hamburger').toggle();
+
+                 //$('#optMenu').css('display', '');
+                 //$('#optMenu').css('min-height', '200px');
+                 //$('#optMenu').css('border', '1px solid red');
+                 //$('#optMenu').css('z-index', '10000');
+
+            //     alert(menuOpen + ' css: ' + $('#optMenu').css());
+           menuOpen = true;
+        //   return false;
+       }
+  //     menuOpen = false;
+
+        }
+
+        function menuCmnd_before(id) {
+          //  alert(id);
+            if (id == 'index') {
+
+             //   blackberry.system.event.onHardwareKey(blackberry.system.event.KEY_ENDCALL, sendToBackground);
+
+               // openBESPushListener();
+                start_app();
+            }
+            else if (id == 'Login') {
+
+                // document.getElementById('txt_password').focus();
+                //  initMenus();
+            }
+            else if (id == 'Menu') {
+                appStarted = true;
+                //  set_user();
+             //   bb.refresh();
+                do_menus();
+
+            }
+
+            else if (id == 'smspre') {
+                init_PRE();
+            }
+            else if (id == 'SMS') {
+                //  set_user();
+                init_SMS();
+                ///  do_menus(element);
+
+            }
+            else if (id == 'TakePhoto') {
+              //  alert('photo');
+             //   site_list('1');
+
+            }
+            else if (id == 'camera') {
+                //   get_exist();
+                //   bb.refresh();
+
+            }
+            else if (id == 'Messaging') {
+                //  mail_screen(element);
+
+            }
+            else if (id == 'new_order') {
+          
+
+
+
+
+
+            }
+
+            else if (id == 'ws_out') {
+             
+
+            }
+
+            else if (id == 'ws_con') {
+
+                list_WS_Outstanding();
+
+            }
+
+            else if (id == 'newOrder') {
+                //  waste_list(element, 2);
+
+            }
+            else if (id == 'scancode') {
+                // doQRScan();
+
+            }
+        }
+
+    function do_menu_nav(srcs, cmnd) {
+        // alert(cmnd);
+      
+        try {
+            menuCmnd_before(cmnd);
+            $.get(srcs).success(function (html) {
+
+                $('#div_content').html('').html(html);
+                global_vars();
+                menuCmnd(cmnd);
+                menu_nav(cmnd);
+            });
+            
+            }   catch(e){        }
+           
+        
+    }
+
+    function goBack() {
+        history.back();
+    }
+    function goHome() {
+
+        do_menu_nav('menu.htm', 'Menu');
+    }
+
+    function menuCmnd(id) {
+        hide_menu();
+  
+         if (id == 'index') {
+         //   start_app();
+        }
+        else if (id == 'Login') {
+            document.getElementById('txt_password').focus();
+            var LBut = document.getElementById('but_login');
+            $(LBut).click(function () {
+      
+                click_login();
+            })
+
+        }
+        else if (id == 'Menu') {
+           // start_app();
+
+            //$('#menu_photos').on('click', function () {
+            //   
+            //});
+
+        }
+        else if (id == 'about') {
+            $('#cur_version').html('1.0.0.0');
+            //   staff_found
+        }
+        else if (id == 'options') {
+            setting_screen();
+
+        }
+        else if (id == 'dialog') {
+            // dialog_ready(element, params.auto);
+        }
+        else if (id == 'smspre') {
+            show_IMEI();
+            //  document.getElementById('btn_preauth').focus();
+        }
+        else if (id == 'link') {
+
+        }
+        else if (id == 'SMS') {
+            document.getElementById('job_type_id').focus();
+
+            //  set_user();
+            //  init_SMS();
+            ///  do_menus(element);
+
+
+            //    get_Default_settings();
+            //   show_Dialog('configuring..', 'sms.htm', 'SMS');
+            //    window.setTimeout(setting_screen, 1500);
+        }
+        else if (id == 'SMSCon') {
+            document.getElementById('txt_new_pin').focus();
+        }
+        else if (id == 'camera') {
+            $('#aHeader').prepend("<p><span onclick='goHome()' class='butt icon-home'></span>&nbsp;Photos for " + _SName + "</p>");
+           // wsMenu = document.querySelector('[data-bb-type=header]');
+          //  wsMenu.innerHTML = "<p><span onclick='goHome()' class='butt icon-home'></span>&nbsp;Photos for " + _SName + "</p>";
+            get_exist();
+            // bb.refresh();
+
+        }
+        else if (id == 'Messaging') {
+            //var bBut = document.getElementById('bot_butt_m');
+            //$(bBut).hover(function () {
+            //    $(bBut).toggleClass('btm_buttons-hover', 2000);
+
+            //})
+            //var bBut2 = document.getElementById('bot_butt_mm');
+            //$(bBut2).hover(function () {
+            //    $(bBut2).toggleClass('btm_buttons-hover', 2000);
+
+            //})
+            //bot_butt_mm
+            mail_screen();
+
+        }
+        else if (id == 'video') {
+            doOnload();
+        }
+        else if (id == 'TakePhoto') {
+            site_list(1);
+          
+            $('#aHeader').prepend("<p><span onclick='goHome()' class='butt icon-home'></span>&nbsp;Take Photos</p>");
+            //   wsMenu = document.querySelector('[data-bb-type=header]');
+            //  wsMenu.innerHTML = "<p><span onclick='goHome()' class='butt icon-home'></span>&nbsp;Take Photos</p>";
+
+        }
+        else if (id == 'new_order') {
+            site_list(2);
+            $('#aHeader').prepend("<p><span onclick='goHome()' class='butt icon-home'></span>&nbsp;New Orders</p>");
+
+         //   wsMenu = document.querySelector('[data-bb-type=header]');
+        //    wsMenu.innerHTML = "<p><span onclick='goHome()' class='butt icon-home'></span>&nbsp;New Orders</p>";
+
+        }
+        else if (id == 'ws_out') {
+            site_list(3);
+            $('#aHeader').prepend("<p><span class='butt icon-home'></span>&nbsp;Confirm Orders</p");
+          //  wsMenu = document.querySelector('[data-bb-type=header]');
+         //   wsMenu.innerHTML = "<p><span class='butt icon-home'></span>&nbsp;Confirm Orders</p>";
+
+        }
+        else if (id == 'ws_con') {
+
+            $('#aHeader').prepend("<p><span class='butt icon-home'></span>&nbsp;" + slCnt + " x slips for " + _SName + "</p>");
+         //   wsMenu = document.querySelector('[data-bb-type=header]');
+          //  wsMenu.innerHTML = "<p><span class='butt icon-home'></span>&nbsp;" + slCnt + " x slips for " + _SName + "</p>";
+
+        }
+        else if (id == 'newOrder') {
+            $('#aHeader').prepend("<p><span class='butt icon-home'></span>&nbsp;Order for " + _SName + "</p>");
+            wsMenu = document.querySelector('[data-bb-type=header]');
+          //  wsMenu.innerHTML = "<p><span class='butt icon-home'></span>&nbsp;Order for " + _SName + "</p>";
+        //    document.getElementById('waste_but_new').focus();
+
+        }
+        else if (id == 'confirm_ws_screen') {
+            //  alert('id: ' + params.id_msg);
+            confirm_ws();
+            //var bBut = document.getElementById('bot_butt');
+            //$(bBut).hover(function () {
+            //    $(bBut).toggleClass('btm_buttons-hover', 2000);
+
+            //})
+
+        }
+
+
+
+
+    }
+
+    function start_android() {
+        
+      
+        // Log the results of the navigate event
+        $(window).on("navigate", function (event, data) {
+          //  alert('' + data.state.info);
+            //console.log(data.state.info);
+            //console.log(data.state.direction);
+            //console.log(data.state.url);
+            //console.log(data.state.hash);
+        });
+
+        $(document).on("menubutton", function () {
+            selectMenu();
+
+        });
+
+        $("a").on("click", function (event) {
+
+            // Prevent the usual navigation behavior
+            event.preventDefault();
+
+
+        });
+        start_app();
+    }
+
+    //               config.ondomready = function (element, id, params) {
+    //                   console.log(id + 'dom ready');
+    //
+    //             //  bb.pushScreen('menu.html', 'Menu');
+    //           }, false);
+
+    //           // Fire the webworksready event for PlayBook and BBOS
+    //           window.addEventListener('load', function () {
+    //               if (navigator.userAgent.indexOf('BB10') < 0) {
+    //                   var evt = document.createEvent('Events');
+    //                   evt.initEvent('webworksready', true, true);
+    //                   document.dispatchEvent(evt);
+    //               }
+    //           });
+
+    function sendToBackground() {
+        //   blackberry.app.requestBackground();
+    }
+
+   // start_android();
+    </script>
+    <script type="text/javascript" src="scripts/cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+</body>
+
+
+</html>
